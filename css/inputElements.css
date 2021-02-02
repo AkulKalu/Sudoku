@@ -1,0 +1,69 @@
+button {
+    font-family: 'NightinTokyo';
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.BtnNormal {
+    position: relative;
+    z-index: 10;
+    color: rgb(43, 41, 41);
+    font-weight: 700;
+    font-size: 2vh;
+    width: 80px;
+    text-align: center;
+    display: inline-block;
+    margin: 0.5rem auto;
+    border: 2px solid rgba(43, 41, 41, 0.658);
+    background-color: var(--background);
+    padding: 10px;
+    overflow: hidden;
+    animation: slide-in-blurred-right 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) backwards;
+    transition:  box-shadow 0.86, opacity 0.6s;
+}
+
+.BtnNormal:disabled {
+    opacity: 0.5;
+}
+
+
+
+.InputGenLimit {
+    margin: auto;
+    margin-bottom: 2rem;
+    width: 20%;
+    height: 1.8rem;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0.8px 0.8px 2px rgb(122, 118, 118);
+    border: 2px solid rgb(92, 88, 88);
+    background-color: var(--background);;
+}
+
+@media only screen and (min-width: 700px) and (orientation:landscape) {
+    .BtnNormal {
+        width: 60%;
+    }
+    .BtnNormal:hover {
+        color: white;
+    }
+    .BtnNormal:active::after {
+        background-color: rgb(17, 16, 16);
+    }
+    .BtnNormal::after {
+        transition:background-color 0.5s, top 0.2s;
+        position: absolute;
+        z-index: -1;
+        content: '';
+        background-color: rgb(39, 37, 37);
+        left: 0;
+        right: 0;
+        top:110%;
+        height: 100%;
+    }
+    .BtnNormal:hover::after {
+        top:0;
+    }
+}

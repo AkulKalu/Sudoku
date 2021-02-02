@@ -1,0 +1,112 @@
+
+.LoginScreen {
+    height: 100%;
+    width: 100%;
+    font-family: 'NightinTokyo';
+    position: fixed;
+    top: 0;
+}
+
+.Title {
+    padding-top: 10%;
+    display: flex;
+    justify-content: center;
+}
+.TitleLetter {
+    font-size: 10vw;
+    padding: 1rem;
+    animation: fade-in 4s ease-in both;
+    pointer-events: none;
+}
+.TitleLetterLarge {
+    font-size: 15vw;
+}
+.LoginForm {
+    padding-top: 8vh;
+    margin: 5% auto;
+}
+#formErrorDisplay {
+    text-align: center;
+    font-size: 2.5vh;
+    padding-bottom: 0.5rem;
+    color: rgb(238, 14, 59);
+}
+
+.FormInputWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: slide-in-blurred-bottom 1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+    animation-delay: 0.5s;
+}
+.FormButtonsWrap {
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: slide-in-blurred-bottom 1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+    animation-delay: 1s;
+}
+.FormButton {
+    cursor: pointer;
+    font-size: 2.5vh;
+    font-family: inherit;
+    font-weight: 500;
+    padding: 0.5rem;
+}
+.FormButton:hover {
+    animation: colorYoYo 1.5s linear ;
+    animation-iteration-count: infinite;
+}
+
+.FormInput {
+    font-size: 1.5vh;
+    height: 4.5vh;
+    min-height: 30px;;
+    max-height: 55px;
+    padding: 0.5rem;
+    margin-top: 5px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid grey;
+    background-color: rgb(245, 241, 245);
+    opacity: 0.6;
+    transition: opacity 0.4s;
+}
+
+.FormInput:focus {
+    opacity: 1;
+}
+.InvalidInput {
+    border-color: crimson;
+    box-shadow: 0 0 5px crimson;
+}
+.ValidInput {
+    border-color: rgb(18, 221, 18);
+    box-shadow: 0 0 5px rgb(18, 221, 18);
+}
+
+@media only screen and (min-width: 700px) and (orientation:landscape) {
+    .TitleLetter {
+        font-size: 15vh; 
+    }
+    .TitleLetterLarge {
+        font-size: 20vh;
+    }
+    .Title {
+        padding-top: 5%;
+    }
+    .FormInput {
+        width:50% ; 
+        max-width: 300px;
+    }
+    .LoginForm {
+        padding-top: unset;
+    }
+    
+}
+@media only screen and (max-height: 550px) {
+    .FormInput {
+        font-size: 0.6rem;
+    }
+}
