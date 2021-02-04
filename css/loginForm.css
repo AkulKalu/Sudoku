@@ -1,0 +1,76 @@
+.form {
+    padding-top: 8vh;
+    margin: 5% auto;
+    animation: fade-in 2s ease-in both;
+    width: 50%;
+}
+.form-wrap {
+    width: 100%;
+}
+
+#formErrorDisplay {
+    text-align: center;
+    font-size: 2.5vh;
+    padding-bottom: 0.5rem;
+    color: crimson;
+}
+
+.form-group {
+    width: 100%;
+}
+.form-buttons {
+    padding-top: 2rem;
+}
+.form-btn {
+    font-size: 2.3vh;
+    font-weight: 500;
+    padding: 0.5rem;
+}
+.form-btn:hover {
+    animation: colorYoYo 1.5s linear infinite ;
+}
+
+.form-input {
+    font-size: 1.5vh;
+    height: 4.5vh;
+    min-height: 30px;;
+    max-height: 80px;
+    padding: 0.5rem;
+    margin-top: 5px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid var(--greenC2);
+    background-color:var(--whiteC1);
+    opacity: 0.6;
+    transition: opacity 0.4s;
+}
+
+.form-input:focus {
+    opacity: 1;
+}
+
+.invalid-input {
+    border-color: crimson;
+    box-shadow: 0 0 5px crimson;
+}
+.valid-input {
+    border-color: rgb(18, 221, 18);
+    box-shadow: 0 0 5px rgb(18, 221, 18);
+}
+
+@media only screen and (min-width: 700px) and (orientation:landscape) {
+
+    .form-input {
+        width:100% ; 
+        max-width: 350px;
+    }
+    .form {
+        padding-top: unset;
+    }
+    
+}
+@media only screen and (max-height: 550px) {
+    .form-input {
+        font-size: 0.6rem;
+    }
+}

@@ -1,0 +1,77 @@
+.numpad-key {
+    color: var(--fontC1);
+    border: none;
+    font-size: 1.5rem;
+    width: 8vw;
+    height: 8vw;
+    border: 1px solid transparent;
+    margin: 0 1vw;
+    cursor: pointer;
+    background-color: var(--background);
+    position: relative;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+.Added {
+    background-color: var(--greenC2);
+    color: var(--yellowC1);
+}
+
+.numpad-key:active::after {
+    position: absolute;
+    content: '';
+    border: 1px solid  var(--background);
+    border-radius: 50%;
+    animation: anInputNum 0.5s ease-out forwards ;
+}
+.numpad-key:active {
+    background-color: var(--greenC2);
+    color:  var(--yellowC1);
+    border-color:  var(--yellowC1);
+}
+
+.numpad {
+    height: 50%;
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+@media only screen and (min-width: 700px) and (orientation:landscape) {
+    .numpad {
+        box-sizing: border-box;
+        display: grid;
+        width: 100%;
+        height: 50%;
+        row-gap: 10%;
+        column-gap: 10%;
+        margin-top: 7.5%;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    
+   
+    .numpad-key {
+        width: 85%;
+        height: 85%;
+        border-radius: 50%;
+        font-size: 4vh;
+        margin: unset;
+    }
+    .numpad-key:hover::after {
+        position: absolute;
+        content: '';
+        border: 1px solid  var(--background);
+        border-radius: 50%;
+        animation: anInputNum 0.5s ease-out forwards ;
+    }
+    .numpad-key:hover {
+        background-color: var(--greenC2);
+        color:  var(--yellowC1);
+        border-color:  var(--yellowC1);
+    }
+  
+}

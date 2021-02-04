@@ -1,0 +1,64 @@
+.wrap {
+    margin: auto;
+    margin-top: 8vh;
+    transition: opacity 0.3s;
+}
+
+
+.board-wrap {
+   width: fit-content;
+}
+
+.controls {
+    padding-top: 1rem;
+    margin: auto;
+}
+
+.board-bar {
+    display: flex;
+    color: var(--background);
+    text-shadow: 1px 1px 1px var(--greenC2);
+    padding: 0.5vh 1vh;
+    font-size: 2vh;
+}
+.board-bar-user , .board-bar-timer {
+    width: 50%;
+}
+.board-bar-timer {
+    display: flex;
+    align-items: center;
+}
+.menu-sw {
+    position: absolute;
+    right: 1.5vh;
+    top: 1.5vh;
+    height: 4vh;
+    z-index: 2;
+    transition: filter 0.3s;
+}
+
+
+@media only screen and (min-width: 700px) and (orientation:landscape) {
+
+    .menu-sw {
+        height: 3.8vh;
+        cursor: pointer;
+     }
+
+    .controls {
+        margin: unset;
+        margin-left: 3vh;
+        height: 60vh;
+        width: 30vh;
+    }
+    .wrap {
+        margin-top: 10vh;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+ 
+}
+
+
+
+
