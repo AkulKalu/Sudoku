@@ -1,0 +1,22 @@
+
+.logo-btn {
+    height: 3.5vh;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding-right: 1vh;
+}
+.logo-btn:hover {
+    transform: scale(1.1);
+}
+.user {
+    display: flex;
+    align-items: center;
+}
+
+
+@media only screen and (min-width: 700px) and (orientation:landscape) {
+   
+    .logo-btn {
+        height: 3.5vh;
+    }
+}

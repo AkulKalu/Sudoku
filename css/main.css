@@ -1,0 +1,16 @@
+@import './style.css';
+@import './animations.css';
+@import './loginScreen.css';
+@import './loginForm.css';
+@import './layout.css';
+@import './board.css';
+@import './button.css';
+@import './gameControls.css';
+@import './stats.css';
+@import './userDisplay.css';
+@import './menu.css';
+@import './numpad.css';
+@import './instructions.css';
+@import './visualiser.css';
+@import './winDialog.css';
+@import './generator.css';

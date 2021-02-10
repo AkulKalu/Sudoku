@@ -1,0 +1,43 @@
+.win-dialog {
+    background-color: #135058b6;
+    width: fit-content;
+    padding: 1rem;
+    height: fit-content;
+    border-radius: 5px;
+    border:1px solid var(--greenC2);
+    /* animation: slit-in-vertical 0.45s ease-out both; */
+    backdrop-filter: blur(3px);
+    text-shadow: 1px 1px 1px var(--greenC3);
+    font-size: 1rem;
+}
+
+.win-dialog p {
+    font-size: 2.1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.ranking {
+    display: flex;
+    padding-bottom: 1rem;
+}
+
+.ranking :first-child {
+   width: 50%;
+   font-size: 1.6rem;
+   font-weight: 600;
+}
+.ranking :last-child {
+    width: 50%;
+    text-align: right;
+    font-size: 1.6rem;
+    font-weight: 600;
+ }
+
+@media only screen and (min-width: 700px) and (orientation:landscape) {
+    .win-dialog {
+        width: 30%;
+        height: fit-content;
+        font-size: 1.8vh;
+    }
+}
