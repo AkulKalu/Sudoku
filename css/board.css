@@ -1,24 +1,14 @@
-@import './animations.css';
-@import url('https://fonts.googleapis.com/css2?family=Yrsa:wght@700&display=swap');
-
-.Board, .Box, .NoteCell {
-    display: grid ; 
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    overflow: hidden;
-    
-}
-.Box {
-   margin: 2px;
-}
-.Board {
+.board {
     position: relative;
-    font-family: 'Yrsa', serif;
     margin: auto;
-    width: 90vw;
-    height: 90vw;
+    width: 88vw;
+    height: 88vw;
 }
 
+.box {
+   margin: 2px;
+   overflow: hidden;
+}
 #box1 {
     border-top-left-radius: 5px;
 }
@@ -43,21 +33,24 @@
     border-left: 1px solid var(--border-cell);
     border-right: 1px solid var(--border-cell);
 }
-.Cell {
+.cell {
     color:var(--fontC1);
     position: relative;
     cursor: pointer;
     background-color:var( --background );
-    transition:background-color 0.3s;
     overflow: hidden;
 }
-
-.Higlight {
-    animation: higlight 1s ease-out;
-    animation-fill-mode:  forwards;
+.note {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.Number { 
+.higlight {
+    animation: higlight 0.5s ease-out forwards;
+}
+
+.num { 
     width: 100%;
     height: 100%;
     align-items: center;
@@ -65,44 +58,32 @@
     pointer-events: none;
     display: flex;
     font-size: 3vh;
-    transition: color 1s;
+    transition: color 0.4s;
 }
-.Invalid {
+.num-invalid {
     position: relative;
     color: rgb(255, 0, 0);
 }
 
-.Note {
-    pointer-events: none;
-    text-align: center;
-    font-size: 1.8vh;
-    transition: transform 0.4s ease-in-out;
-}
-
-.NoteOn{
-    animation: colorYoYo 0.6s linear infinite;
-}
-
-
-.Timer {
+.timer {
     width: 100%;
     text-align: right;
 }
 
 @media only screen and (min-width: 700px) and (orientation:landscape) {
-    .Board {
+    .board {
         margin: unset;
         width: 60vh;
         height: 60vh;
     }
-    .Timer {
-        
-    }
-    .Cell:hover {
-      background-color: transparent;
-       color: white;
+ 
+    .cell:hover {
+        background-color: var(--greenC1);
+       color: yellow;
+       color: rgb(105, 103, 103);
     }
 }
+
 
 
 

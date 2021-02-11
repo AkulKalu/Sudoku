@@ -46,13 +46,10 @@ class SudokuGenerator {
     }
     displaySudoku() {
         // Display generated sudoku in DOM if required
-        let delay = 0.05;
         for (const pos of numberPositions()) {
             if(this.template[pos.row][pos.col]) {
                 const cell = new Cell(document.getElementById(`c${pos.row}${pos.col}`)) 
                 cell.updateDOMCell(this.template[pos.row][pos.col]);
-                cell.cell.firstElementChild.style.animationDelay = `${delay}s`;
-                delay += 0.05;
             }
         }
     }

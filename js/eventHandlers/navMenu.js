@@ -9,31 +9,59 @@ export function nav(e) {
             replace(ids.MAIN_MENU, navPuzzle())
             break;
         case ids.MENU_VISUALISER_BTN:
-            menuSwitch();
+            state.menuOpen.close()
             visualiserMode();
             board.reset();
             break;
         case ids.MENU_INSTRUCTIONS_BTN:
-            document.body.appendChild(instructions());
+            replace(ids.MAIN_MENU, instructions());
+            break;
+        case ids.INS_CLOSE:
+            replace(ids.INSTRUCTIONS, navMenu(false));
             break;
         case ids.MENU_RANDOM_BTN:
             clearSave();
             playMode();
-            menuSwitch();
+           state.menuOpen.close()
             break;
         case ids.MENU_SETSUDOKU_BTN:
-            menuSwitch();
+           state.menuOpen.close()
             setMode();
             board.reset(cloneBoard(board.emptyTemplate));
             break;
         case ids.MENU_GENERATE_BTN:
-            menuSwitch();
+            state.menuOpen.close()
             generateMode();
             break;
         case ids.MENU_BACK_BTN:
             replace(ids.PUZZLES_MENU, navMenu(false));
             break;
         case ids.MENU_MOB:
-            menuSwitch();
+           state.menuOpen.close()
     }
+}
+
+export function menuSwitch(e) {
+    // mobile menu button switch handler
+        if(state.menuOpen) {
+            state.menuOpen.close();
+            return;
+        }
+        const wrap = document.getElementById(ids.WRAP);
+
+        wrap.style.opacity = 0;
+        document.body.append(navMenu(true));
+
+        state.menuOpen = {
+            close : () => {
+                
+                let backdrop =  document.getElementById(ids.BACKDROP);
+                backdrop.style.opacity = 0;
+                backdrop.ontransitionend = () => {
+                    wrap.style.opacity = '';
+                    backdrop.remove();
+                }
+                state.menuOpen = false;
+                } 
+            } 
 }

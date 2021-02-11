@@ -32,10 +32,10 @@ export function counter() {
 }
 
 export function avalibleInput() {
-    const numberButtons = document.querySelectorAll('.' + classNames.INPUT_NUM);
+    const numberButtons = document.querySelectorAll('.numpad-key');
 
     function buttonAdded(btn, state) {
-        btn.classList.toggle(classNames.ADDED, state);
+        btn.classList.toggle('marked', state);
     }
 
     for (const btn of numberButtons.values()) {

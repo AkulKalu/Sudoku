@@ -85,7 +85,7 @@ class SudokuSolver {
             const cell = document.getElementById(step.cell);
             if(step.value) {
                 const num = document.createElement('span');
-                num.classList.add(classNames.NUMBER, classNames.VISUALISE);
+                num.classList.add('num', 'visualise');
                 num.textContent = step.value;
                 setTimeout(()=> {
                     cell.innerHTML = '';

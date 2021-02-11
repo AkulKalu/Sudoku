@@ -6,19 +6,24 @@ import {generator} from '../components/generator.js';
 import {visualiser} from '../components/visualiser.js';
 import {loginScreen} from '../components/loginScreen.js';
 import {layout} from '../components/layout.js';
+import {userDisplay} from '../components/userDisplay.js';
 import {generateSudoku, clearBoard, counter} from './functions.js';
 
 import * as key from '../eventHandlers/keyboard.js';
 
+
 export function playMode(generate = true) {
     clearInterval(timer);
     let buttons = new DocumentFragment();
-    let timerCont = document.getElementById('clock');
+    let timerCont = document.getElementById(ids.BOARD_CLOCK);
+    
 
     buttons.appendChild(numpad());
     buttons.appendChild(gameControls());
-    timerCont.appendChild(timerEl())
+
+    timerCont.innerHTML = ''
     controls.innerHTML = '';
+    timerCont.appendChild(timerEl());
     controls.appendChild(buttons);
 
     if(generate) {
@@ -68,6 +73,8 @@ export function authenticationMode() {
     document.body.appendChild(loginScreen())
 }
 
+
+
 export function startApp(load = true) {
 
     // check if login is from in game
@@ -78,9 +85,10 @@ export function startApp(load = true) {
 
     if(load) {
         document.body.prepend(layout());
+        document.getElementById(ids.USER_DISPLAY).appendChild(userDisplay());
         controls = document.getElementById(ids.CONTROLS_WRAP);
     }
-
+    
     // 
 
     const save = storage().activeUser ? storage().activeUser.save : null;

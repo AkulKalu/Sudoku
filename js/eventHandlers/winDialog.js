@@ -1,12 +1,11 @@
 import {playMode} from '../game/interfaceModes.js';
 
 export function winDialogControls(event) {
-    const dialog = document.getElementById(ids.WIN_DIALOGE);
     switch (event.target.id) {
         case ids.WIN_NEW:
-            dialog.classList.add('Puffout');
-            dialog.onanimationend = () => {
-                dialog.remove();
+            state.winDialog.style.animation = 'fade-out 0.2s ease-out'
+            state.winDialog.onanimationend = () => {
+                state.winDialog.remove();
                 playMode();                    
             }
             break;

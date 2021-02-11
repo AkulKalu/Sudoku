@@ -1,7 +1,7 @@
 .numpad-key {
     color: var(--fontC1);
     border: none;
-    font-size: 1.5rem;
+    font-size: 2.2vh;
     width: 8vw;
     height: 8vw;
     border: 1px solid transparent;
@@ -13,10 +13,7 @@
     transition: transform 0.2s;
 }
 
-.Added {
-    background-color: var(--greenC2);
-    color: var(--yellowC1);
-}
+
 
 .numpad-key:active::after {
     position: absolute;
@@ -32,9 +29,7 @@
 }
 
 .numpad {
-    height: 50%;
-    margin-top: 1rem;
-    width: 100%;
+    margin-top: 0.8rem;
     display: flex;
     justify-content: center;
 }

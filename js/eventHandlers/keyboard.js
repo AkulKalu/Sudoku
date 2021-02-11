@@ -4,7 +4,7 @@ import {avalibleInput, stepp, clearBoard} from '../game/functions.js';
 export function numPad(e) {
     if(board.focused) {
         if('123456789'.search(e.key) !== -1 ) {
-            if(document.getElementById(ids.INPUT_NUM + e.key).classList.contains(classNames.ADDED)) {
+            if(document.getElementById(ids.INPUT_NUM + e.key).classList.contains('marked')) {
                 board.removeNumber(+e.key)
             }else{
                 if(board.addNumber(+e.key)) {

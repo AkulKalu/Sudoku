@@ -2,8 +2,8 @@
 
 export function instructions() {
     const el = document.createElement('div');
-    el.innerHTML =` <div class=${classNames.INSTRUCTIONS}>
-                        <button class=${classNames.BTN_STATS} id=${ids.INS_CLOSE} type="button">X</button>
+    el.innerHTML =` <div class="instructions pos-fix">
+                        <button class="hov-yell" id=${ids.INS_CLOSE} type="button">X</button>
                         <h1>Help and Game Instructions</h1>
                         <p>
                         The classic Sudoku game involves a grid of 81 squares. The grid is divided into nine blocks, each containing nine squares.
@@ -27,10 +27,6 @@ export function instructions() {
                             <p>C - clear cell</p>
                         </div>
                     </div>`
-
-    el.querySelector('button').onclick = e => {
-        document.getElementById(ids.INSTRUCTIONS).remove();
-    }
 
     el.id = ids.INSTRUCTIONS;
     return el;

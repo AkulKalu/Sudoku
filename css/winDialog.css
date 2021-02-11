@@ -5,7 +5,6 @@
     height: fit-content;
     border-radius: 5px;
     border:1px solid var(--greenC2);
-    /* animation: slit-in-vertical 0.45s ease-out both; */
     backdrop-filter: blur(3px);
     text-shadow: 1px 1px 1px var(--greenC3);
     font-size: 1rem;

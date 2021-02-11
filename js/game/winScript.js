@@ -49,10 +49,10 @@ export function puzzleSolved() {
        
         // updateUser(storage.stats.authData, storage.stats);
         // 
-        document.body.appendChild(winDialog(stats.level, stats.xpPoints));
+        state.winDialog = document.body.appendChild(winDialog(stats.level, stats.xpPoints));
         // update displayed user info
         replace(ids.USER_MENU, userDisplay());
     }else {
-        document.body.appendChild(winDialog('LOGIN', '100'));
+        state.winDialog = document.body.appendChild(winDialog('LOGIN', '100'));
     } 
 }

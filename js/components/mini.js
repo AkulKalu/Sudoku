@@ -6,13 +6,13 @@ export function timerEl() {
                     <span>:</span>
                     <span id=${ids.SECONDS}>00</span>`
     el.id = ids.TIMER;
-    el.classList.add(classNames.TIMER);
+    el.className = 'timer';
     return el;
 }
 
 export function spinner() {
     const el = document.createElement('div');
-    el.innerHTML =` <div class=${classNames.SPINNER} >
+    el.innerHTML =` <div class="spinner" >
                         <img style="width:40px"  src="content/blocks.svg" alt="Spinner"></img>
                     </div>`
     el.id = ids.SPINNER;

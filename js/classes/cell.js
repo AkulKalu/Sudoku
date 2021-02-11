@@ -39,7 +39,7 @@ class Cell {
         return this.localBoard[this.row][this.col];  
     }
     numberIsValid(state) {
-        this.cell.firstElementChild.classList.toggle(classNames.NUMBER_INVALID, state);
+        this.cell.firstElementChild.classList.toggle('num-invalid', state);
     }
     static noteIsValid(id, state) {
         const note = document.getElementById(id);

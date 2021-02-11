@@ -1,40 +1,48 @@
-.Instructions p {
+.instructions p {
     margin: auto;
-    font-size: 2.5vh;
+    font-size: 2vh;
     padding-bottom: 1rem;
     display: block;
     width: 70%;
-    animation: fade-in 2s ease-out ;
-   
 }
-.Instructions h1 {
+.instructions h1 {
     padding: 1.5rem 0;
-    animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    font-size:  4vh;
+    margin-top: 10%;
+    
 }
-.Instructions h2 {
+.instructions h2 {
+    font-size:  3vh;
     padding-bottom: 0.5rem;
-    animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
-.Instructions div {
-    border-top: 1px solid black;
+.instructions div {
+    border-top: 1px solid var(--whiteC1);
     width: 70%;
     margin: auto;
-    padding-top: 2rem;
+    padding-top: 2vh;
 }
-.Instructions button {
-    font-size: 4vh;
-    margin-right: 1rem;
+.instructions button {
+    font-size: 3.5vh;
+    position: absolute;
+    left: 3%;
+    top: 0.8vh;
+    z-index: 3;
 }
-.Instructions {
-    position: fixed;
-    z-index: 150;
-    background-color: rgba(219, 202, 202, 0.89);
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+.instructions {
+    z-index: 3;
     text-align: center;
-    overflow: scroll;
+    animation: fade-in 1s ease-out ;
+    overflow-y: scroll;
+}
+
+@media only screen and (min-width: 700px) and (orientation:landscape) {
+    .instructions {
+        overflow-y: unset;
+    }
+    .instructions button {
+       left: 2vh; 
+    }
+
 }
 
 

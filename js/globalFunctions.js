@@ -61,7 +61,6 @@ function storage (set = null) {
     }else {
         return JSON.parse(sessionStorage.getItem('sudokuStorage'));
     }
-    
 }
 
 function selectEl(id) {
@@ -78,7 +77,7 @@ function replace(elementId, withElement) {
 function flashMessage(content) {
     const boardEl = document.getElementById(ids.BOARD);
     const message = document.createElement('div');
-    message.classList.add(classNames.MESSAGE);
+    message.classList.add('message');
     message.textContent = content;
     boardEl.appendChild(message);
     setTimeout(()=> {
@@ -86,21 +85,7 @@ function flashMessage(content) {
     }, 3000)
 }
 
-function menuSwitch() {
-    // mobile menu button switch handler
-    if(window.innerWidth < 1025 )  {
-        const menu =  document.getElementById(ids.MAIN_MENU_WRAP);
-        if(state.mobMenuOpen) {
-            mobileMenuBtn.classList.toggle('mob-menu-active', false);
-            menu.style.display = '';
-            state.mobMenuOpen = false;
-        }else {
-            menu.style.display = 'flex';
-            mobileMenuBtn.classList.toggle('mob-menu-active', true);
-            state.mobMenuOpen = true;
-        }
-    } 
-}
+
 
 function clearSave() {
     const save = storage().activeUser ? storage().activeUser.save : null;
@@ -120,7 +105,7 @@ function clearSave() {
 
 function createCellElement(position) {
     const cell = document.createElement('div');
-    cell.classList.add(classNames.CELL);
+    cell.classList.add('cell');
     cell.setAttribute('data-row', position.row);
     cell.setAttribute('data-col', position.col);
     cell.id = `c${position.row}${position.col}`;
@@ -130,14 +115,14 @@ function createCellElement(position) {
 function createNumberElement(cellId, number, note = false) {
     const numContainer = document.createElement('span');
         numContainer.id = `n${cellId.slice(1)}${number}`;
-        note ? numContainer.classList.add('note'): numContainer.classList.add(classNames.NUMBER);
+        note ? numContainer.classList.add('note'): numContainer.classList.add('num');
         numContainer.textContent= number;
         return numContainer;
 }
 
 function createBoxElement(idNum) {
     const box = document.createElement('div');
-    box.classList.add(classNames.BOX);
+    box.className = 'grid-3 box';
     box.id = `box${idNum}`;
     return box;
 }

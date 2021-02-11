@@ -7,7 +7,7 @@ class Board extends SudokuSolver {
         this.noteMode = false;
         this.steps = [];
         this.hints = 3;
-        this.cells = document.querySelectorAll('.' + classNames.CELL);
+        this.cells = document.querySelectorAll('.cell');
         this.moves = 0;
         this.errors = 0;
         this.emptyTemplate = [
@@ -33,7 +33,7 @@ class Board extends SudokuSolver {
             const cell = new Cell(document.getElementById(`c${row}${col}`), board);
             if(cell.isNoteCell()) {
                 // In case that we are printing saved sudoku or we are retracing steps
-                cell.classHandler(classNames.NOTE_CELL,true);
+                cell.classHandler('grid-3',true);
                 cell.printNoteCell(cell.localValue());
             }else if(cell.localValue() > 0) {
                 if(this.mint[row][col]) {
@@ -53,7 +53,7 @@ class Board extends SudokuSolver {
         this.hints = 3;
         this.errors = 0;
         this.moves = 0;
-        this.cells = document.querySelectorAll('.' + classNames.CELL);
+        this.cells = document.querySelectorAll('.cell');
         this.focusedCol = [];
         this.focusedRow = [];
         this.printBoard(board);
@@ -101,7 +101,7 @@ class Board extends SudokuSolver {
             const focusedCells = [...this.focusedCol, ...this.focusedRow]; 
             for (const cell of focusedCells) {
                 // If state is false turn off highlight
-                cell.classHandler(classNames.HIGHLIGHT, state);
+                cell.classHandler('higlight', state);
             }
             if(state) {
                 let delay = 0.04;
@@ -112,10 +112,10 @@ class Board extends SudokuSolver {
                     if(fast) {
                         // If fast turn off animation
                         pick.cell.style.animationDelay = '';
-                        pick.classHandler(classNames.HIGHLIGHT, state);
+                        pick.classHandler('higlight', state);
                     }else{
                         pick.cell.style.animationDelay = `${delay}s`
-                        pick.classHandler(classNames.HIGHLIGHT, state); 
+                        pick.classHandler('higlight', state); 
                          }
                     delay += 0.04; 
                 }
@@ -127,19 +127,19 @@ class Board extends SudokuSolver {
         // Mark all numbers on board equal to focused cell number
       for (let i = 0; i < this.cells.length; i++) {
           const cell = new Cell(this.cells[i], this.board);
-          cell.classHandler(classNames.ADDED, false)
+          cell.classHandler("marked", false)
           if(!this.focused) {
               continue;
           }
           if(number) {
             // Mark on number input
               if(this.focused.id !== cell.id && number === cell.localValue()) {
-                cell.classHandler(classNames.ADDED, true);
+                cell.classHandler("marked", true);
               }
           }else{
             //  Mark on cell focus
             if(this.focused.localValue() !== 0 && this.focused.id !== cell.id && this.focused.localValue() === cell.localValue()) {
-                cell.classHandler(classNames.ADDED, true);
+                cell.classHandler("marked", true);
             }
           }
           
@@ -193,12 +193,12 @@ class Board extends SudokuSolver {
             if(!this.focused.isNoteCell() && this.focused.localValue() !== 0 ) {
                 this.focused.clear();
             }
-            this.focused.classHandler(classNames.NOTE_CELL, true);
+            this.focused.classHandler('grid-3', true);
         }else {
             if(this.focused.localValue() !== 0 ) {
                 this.focused.clear();
             }
-            this.focused.classHandler(classNames.NOTE_CELL, false); 
+            this.focused.classHandler('grid-3', false); 
             this.markNumberOnBoard(number);
         }
 
@@ -295,7 +295,7 @@ class Board extends SudokuSolver {
         }
         
         if(noteBtn) {
-            noteBtn.parentElement.classList.toggle(classNames.NOTE_MODE_ON, this.noteMode);
+            noteBtn.classList.toggle('note-on', this.noteMode);
         }
     }
 

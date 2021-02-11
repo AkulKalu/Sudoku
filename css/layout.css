@@ -12,6 +12,7 @@
 .controls {
     padding-top: 1rem;
     margin: auto;
+    width: 95%;
 }
 
 .board-bar {
@@ -33,7 +34,7 @@
     right: 1.5vh;
     top: 1.5vh;
     height: 4vh;
-    z-index: 2;
+    z-index: 4;
     transition: filter 0.3s;
 }
 
@@ -47,7 +48,7 @@
 
     .controls {
         margin: unset;
-        margin-left: 3vh;
+        margin-left: 6vh;
         height: 60vh;
         width: 30vh;
     }

@@ -31,7 +31,7 @@ export function boardEl(fastDispaly) {
         count++;
     }
 
-    board.classList.add(classNames.BOARD);
+    board.className = 'grid-3 board';
     board.id = ids.BOARD;
    
     const delay = [0.1];

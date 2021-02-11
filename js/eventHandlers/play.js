@@ -5,7 +5,7 @@ export function numpadControl(e) {
     if(board.focused) {
         if(e.target.id.startsWith(ids.INPUT_NUM)) {
             const num = +e.target.textContent;
-            if(e.target.classList.contains(classNames.ADDED)) {
+            if(e.target.classList.contains('marked')) {
                 board.removeNumber(num);
             }else{
                 // add number and check if solved

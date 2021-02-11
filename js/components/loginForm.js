@@ -3,38 +3,39 @@ import {authentication} from '../eventHandlers/loginForm.js';
 
 export function loginForm(guestBtn=false) {
     const el = document.createElement('div');
+    el.className = 'form-wrap'
     el.innerHTML =`
-                    <form class=${classNames.LOG_FORM}>
+                    <form class="form">
                         <p id=${ids.FORM_ERROR}></p>
-                        <div id=${ids.FORM_INPUTS} class="FormInputWrap">
+                        <div id=${ids.FORM_INPUTS} class="flex-col-c form-group">
                             ${spinner().outerHTML}
-                            <input id=${ids.FORM_EMAIL} class=${classNames.FORM_INPUT} placeholder="Your Email" type="email">
-                            <input id=${ids.FORM_PASS} class=${classNames.FORM_INPUT} placeholder="Password" type="password">
+                            <input id=${ids.FORM_EMAIL} class="form-input" placeholder="Your Email" type="email">
+                            <input id=${ids.FORM_PASS} class="form-input" placeholder="Password" type="password">
                         </div>
-                        <div class=${classNames.FORM_BTN_WRAP}>
-                            <button id=${ids.FORM_LOGIN_BTN} class=${classNames.FORM_BTN} type="button">LOGIN</button>
-                            <button id=${ids.FORM_SIGNUP_BTN} class=${classNames.FORM_BTN} type="button">SIGNUP</button>
-                            ${guestBtn ? `<button id=${ids.FORM_GUEST_BTN} class=${classNames.FORM_BTN} type="button">GUEST</button>`: ''}
+                        <div class="form-buttons flex-col-c">
+                            <button id=${ids.FORM_LOGIN_BTN} class="form-btn" type="button">LOGIN</button>
+                            <button id=${ids.FORM_SIGNUP_BTN} class="form-btn" type="button">SIGNUP</button>
+                            ${guestBtn ? `<button id=${ids.FORM_GUEST_BTN} class="form-btn" type="button">GUEST</button>`: ''}
                         </div>
                     </form>
                     `
     el.querySelector(`[id="${ids.FORM_EMAIL}"]`).oninput = event => inputValidation(event, event.target.value.match(/.+@.+\..+/));
     el.querySelector(`[id="${ids.FORM_PASS}"`).oninput = event => inputValidation(event, event.target.value.length > 5);
-    el.querySelector('.' + classNames.FORM_BTN_WRAP).onclick =  authentication;
+    el.querySelector('.form-buttons').onclick =  authentication;
     el.id = ids.FORM;
     return el;
 }
 
 function inputValidation(event , rule) {
     if(rule) {
-        event.target.classList.toggle(classNames.INPUT_INVALID, false);
-        event.target.classList.toggle(classNames.INPUT_VALID, true);
+        event.target.classList.toggle('invalid-input', false);
+        event.target.classList.toggle('valid-input', true);
     }else {
         if(event.target.value) {
-            event.target.classList.toggle(classNames.INPUT_INVALID, true);
+            event.target.classList.toggle('invalid-input', true);
         }else {
-            event.target.classList.toggle(classNames.INPUT_INVALID, false);
-            event.target.classList.toggle(classNames.INPUT_VALID, false);
+            event.target.classList.toggle('invalid-input', false);
+            event.target.classList.toggle('valid-input', false);
         } 
     }
 }

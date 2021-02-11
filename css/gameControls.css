@@ -25,13 +25,19 @@
     margin-top: 2rem;
 }
 
+.note-on{
+    animation: colorYoYo 0.6s linear infinite;
+}
 
 
-
-@media only screen and (min-width: 600px) and (orientation:portrait) {
+@media only screen and (min-width: 539px) and (orientation:portrait) {
     .ctrl-wrap {
         display: flex;
+        margin-top: 1rem;
         justify-content: center;
+    }
+    .icon-wrap {
+        flex-basis: 15% ;
     }
 }
 

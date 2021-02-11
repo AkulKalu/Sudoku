@@ -12,14 +12,15 @@ button {
     color: var(--fontC1);
     font-weight: 600;
     font-size: 1.8vh;
-    width: 80px;
+    width: 20%;
+    min-width: 90px;
     text-align: center;
     margin: 0.5rem auto;
     background-color: var(--background);
-    padding: 10px;
+    padding: 8px;
     opacity: 0.9;
     border: 1px solid transparent;
-    border-radius: 3px;
+    border-radius: 5px;
     transition:  opacity 0.6s;
 }
 .btn:active {
@@ -31,7 +32,7 @@ button {
     position: absolute;
     content: '';
     border: 1px solid  var(--background);
-    border-radius: 3px;
+    border-radius: 5px;
     animation: anInputNum 0.5s ease-in-out forwards ;
 }
 
@@ -44,7 +45,7 @@ button {
     .btn {
         width: 50%;
         margin: 1.5vh auto;
-        border-radius: 20px;
+        border-radius: 5px;
     }
     .btn:hover {
         color:var(--yellowC1);
@@ -55,7 +56,7 @@ button {
         position: absolute;
         content: '';
         border: 1px solid  var(--background);
-        border-radius: 20px;
+        border-radius: 5px;
         animation: anInputNum 0.5s ease-in-out forwards ;
     }
   

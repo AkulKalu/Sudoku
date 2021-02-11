@@ -31,8 +31,8 @@ export function authentication(event) {
         });
         startApp(!state.statsShown);
         if(state.statsShown) {
+           state.statsShown.close()
            replace(ids.USER_MENU, userDisplay());
-           replace(ids.STATS, stats());
         }
     }
 
